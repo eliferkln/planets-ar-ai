@@ -1,0 +1,79 @@
+{
+  "earth": [
+    {
+      "glbFile": "/assets/earth/1.glb",
+      "iosSrc": "/assets/earth/1.usdz"
+    },
+
+    {
+      "glbFile": "/assets/earth/2.glb",
+      "iosSrc": "/assets/earth/2.usdz"
+    },
+    {
+      "glbFile": "/assets/earth/3.glb",
+      "iosSrc": "/assets/earth/3.usdz"
+    }
+  ],
+  "Jupiter": [
+    {
+      "glbFile": "/assets/Jupiter/4.glb",
+      "iosSrc": "/assets/Jupiter/4.usdz"
+    },
+
+    {
+      "glbFile": "/assets/Jupiter/5.glb",
+      "iosSrc": "/assets/Jupiter/4.usdz"
+    },
+    {
+      "glbFile": "/assets/Jupiter/6.glb",
+      "iosSrc": "/assets/Jupiter/6.usdz"
+    }
+  ],
+  "mars": [
+    {
+      "glbFile": "/assets/mars/7.glb",
+      "iosSrc": "/assets/mars/7.usdz"
+    },
+
+    {
+      "glbFile": "/assets/mars/8.glb",
+      "iosSrc": "/assets/mars/8.usdz"
+    },
+    {
+      "glbFile": "/assets/mars/9.glb",
+      "iosSrc": "/assets/mars/9.usdz"
+    }
+  ],
+
+  "saturn": [
+    {
+      "glbFile": "/assets/saturn/10.glb",
+      "iosSrc": "/assets/saturn/10.usdz"
+    },
+
+    {
+      "glbFile": "/assets/saturn/11.glb",
+      "iosSrc": "/assets/saturn/11.usdz"
+    },
+    {
+      "glbFile": "/assets/saturn/12.glb",
+      "iosSrc": "/assets/saturn/12.usdz"
+    }
+  ],
+
+  "Venus": [
+    {
+      "glbFile": "/assets/venus/13.glb",
+      "iosSrc": "/assets/venus/13.usdz"
+    },
+
+    {
+      "glbFile": "/assets/venus/14.glb",
+      "iosSrc": "/assets/venus/14.usdz"
+    },
+    {
+      "glbFile": "/assets/venus/15.glb",
+      "iosSrc": "/assets/venus/15.usdz"
+    }
+  ]
+}

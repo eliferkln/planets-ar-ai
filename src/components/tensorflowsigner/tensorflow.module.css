@@ -1,0 +1,77 @@
+.tensorflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 55px;
+}
+.tensorflow h2 {
+  font-size: 36px;
+  font-weight: 700px;
+  color: slateblue;
+  text-align: center;
+}
+.tensorflow button {
+  border-radius: 30px;
+  border: none;
+  color: white;
+  background-color: rgba(62, 58, 64, 0.251);
+  text-align: center;
+  padding: 15px 40px;
+  transition: all ease-in-out 0.7s;
+  font-size: 16px;
+}
+.tensorflow button:hover {
+  background-color: rgba(69, 21, 106, 0.327);
+}
+
+.cam {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 400px;
+}
+.class {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class div {
+  margin: 6px;
+  background-color: darkgray;
+  border-radius: 25px;
+  border: none;
+  padding: 8px 20px;
+}
+@media (max-width: 600px) {
+  .class {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  .class div {
+    margin: 6px;
+    background-color: rgba(169, 169, 169, 0.395);
+    border-radius: 5px;
+    border: none;
+    padding: 8px 20px;
+  }
+  .tensorflow h2 {
+    font-size: 20px;
+  }
+  .tensorflow button {
+    padding: 15px 25px;
+  }
+  .cam {
+    width: 280px;
+    height: 300px;
+  }
+  .cam video {
+    width: 280px !important;
+    height: 300px !important;
+  }
+}
