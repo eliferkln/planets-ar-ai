@@ -10,7 +10,7 @@ function App() {
     <div className="content-app">
       <Tensorflow setModelName={setModelName} modelName={modelName} />
       <Container modelName={modelName} />
-      <ChatBot />
+      <ChatBot modelName={modelName} />
     </div>
   );
 }

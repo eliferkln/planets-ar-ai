@@ -1,63 +1,63 @@
 import React, { useState } from "react";
+import axios from "axios";
+import styles from "./chat.module.css";
 
-function ChatBot() {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+interface IProps {
+  modelName: string;
+}
+const GPT3Example: React.FC<IProps> = ({ modelName }) => {
+  const [input, setInput] = useState<string>("");
+  const [output, setOutput] = useState<string>("");
 
-  //   async function askQuestion() {
-  //     try {
-  //       const response = await fetch("https://api.chatgpt.com/your-endpoint", {
-  //         method: "POST",
-  //         headers: {
+  const generateText = async () => {
+    const prompt = input.trim();
+    const apiKey = "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";
 
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify({ question }),
-  //       });
-
-  //       const data = await response.json();
-  //       setAnswer(data.answer);
-  //     } catch (error) {
-  //       console.error("Error:", error);
-  //     }
-  //   }
-  async function askQuestion() {
     try {
-      const response = await fetch("/api/your-endpoint", {
-        method: "POST",
-        headers: {
-          mode: "no-cors",
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
+      const response = await axios.post(
+        "https://api.openai.com/v1/engines/text-davinci-003/completions",
+        {
+          prompt: prompt,
+          max_tokens: 4044,
+          n: 1,
+          temperature: 0.5,
         },
-        body: JSON.stringify({ question }),
-      });
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      console.log("responsee", response);
+      let text = "";
+      if (response.data.choices && response.data.choices.length > 0) {
+        if (response.data.choices[0].text) {
+          text = response.data.choices[0].text;
+        } else if (response.data.choices[0].generated_text) {
+          text = response.data.choices[0].generated_text;
+        }
+      }
 
-      const data = await response.json();
-      setAnswer(data.answer);
+      setOutput(text);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("API request error:", error);
     }
-  }
-
-  function handleChange(e: any) {
-    setQuestion(e.target.value);
-  }
-
-  function handleSubmit(e: any) {
-    e.preventDefault();
-    askQuestion();
-  }
+  };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={question} onChange={handleChange} />
-        <button type="submit">Ask</button>
-      </form>
-      {answer && <div>{answer}</div>}
+    <div className={styles["chat-container"]}>
+      <div className={styles["chat"]}>
+        <textarea
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={modelName.toUpperCase()}
+        />
+        <button onClick={generateText}>Search</button>
+      </div>
+      <div className={styles["chat-desc"]}>{output}</div>
     </div>
   );
-}
+};
 
-export default ChatBot;
+export default GPT3Example;

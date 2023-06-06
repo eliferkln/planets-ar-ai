@@ -69,7 +69,7 @@ const Tensorflow: React.FC<IProps> = ({ setModelName, modelName }) => {
   return (
     <div>
       <div className={styles["tensorflow"]}>
-        <h2>Show the object you want to search </h2>
+        <h2>Detected planets and information</h2>
         <button type="button" onClick={loop}>
           Start
         </button>
